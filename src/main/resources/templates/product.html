@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot and Spring MVC</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <!--th: src - zastąpienie linku odpowiednim dla kontenera-->
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image URL</th>
+        </tr>
+        <tr>
+            <td th:text="${product.get().id}">1</td>
+            <td th:text="${product.get().description}">Some desc</td>
+            <td th:text="${product.get().price}">10.10</td>
+            <td th:text="${product.get().imageUrl}">https.......</td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="${'/products'}">Back to list</a>
+    </div>
+</div>
+</body>
+</html>

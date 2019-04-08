@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot and Spring MVC</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <!--th: src - zastąpienie linku odpowiednim dla kontenera-->
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Street</th>
+            <th>Flat number</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip code</th>
+        </tr>
+        <tr>
+            <td th:text="${customer.get().id}">1</td>
+            <td th:text="${customer.get().firstName}">aaa</td>
+            <td th:text="${customer.get().lastName}">bbb</td>
+            <td th:text="${customer.get().email}">@@@@</td>
+            <td th:text="${customer.get().phoneNumber}">7777</td>
+            <td th:text="${customer.get().addressLineOne}">street</td>
+            <td th:text="${customer.get().addressLineTwo}">flat</td>
+            <td th:text="${customer.get().city}">city</td>
+            <td th:text="${customer.get().state}">state</td>
+            <td th:text="${customer.get().zipCode}">00-000</td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="${'/customers'}">Back to list</a>
+    </div>
+</div>
+</body>
+</html>
